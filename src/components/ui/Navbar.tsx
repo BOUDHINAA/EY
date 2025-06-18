@@ -15,8 +15,8 @@ import {
 import { GitHubLogoIcon } from "@radix-ui/react-icons";
 import { buttonVariants } from "./ui/button";
 import { Menu } from "lucide-react";
-import { ModeToggle } from "./mode-toggle";
-import { LogoIcon } from "./Icons";
+import { ModeToggle } from "../mode-toggle";
+import { LogoIcon } from "../Icons";
 
 interface RouteProps {
   href: string;

@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 import { Badge } from "./ui/badge";
 import {
   Card,
@@ -6,9 +7,9 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
-import image from "../assets/growth.png";
-import image3 from "../assets/reflecting.png";
-import image4 from "../assets/looking-ahead.png";
+import image from "../app/assets/growth.png";
+import image3 from "../app/assets/reflecting.png";
+import image4 from "../app/assets/looking-ahead.png";
 
 interface FeatureProps {
   title: string;
