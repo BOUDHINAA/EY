@@ -1,17 +1,7 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
-import Navbar from "@/components/Navbar";
 import "./globals.css";
-
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
+import Navbar from "@/components/sections/Navbar";
+import { NavigationProvider } from "@/components/layout/NavigationContext";
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -25,11 +15,35 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased bg-[#f9f9f6] text-[#2e2e38]`}
-      >
-        <Navbar />
-        <main>{children}</main>
+      <head>
+        {/* Preload Interstate fonts */}
+        <link
+          rel="preload"
+          href="/fonts/interstate-regular-comp.woff"
+          as="font"
+          type="font/woff"
+          crossOrigin="anonymous"
+        />
+        <link
+          rel="preload"
+          href="/fonts/interstate-bold-cond.woff"
+          as="font"
+          type="font/woff"
+          crossOrigin="anonymous"
+        />
+        <link
+          rel="preload"
+          href="/fonts/interstate-light-cond.woff"
+          as="font"
+          type="font/woff"
+          crossOrigin="anonymous"
+        />
+      </head>
+      <body className="antialiased bg-[#f9f9f6] text-[#2e2e38]">
+        <NavigationProvider>
+          <Navbar />
+          <main className="relative">{children}</main>
+        </NavigationProvider>
       </body>
     </html>
   );

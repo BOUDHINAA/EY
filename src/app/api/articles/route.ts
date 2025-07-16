@@ -14,6 +14,8 @@ export async function GET() {
       content: article.content,
       thumbnail: article.thumbnail,
       url: article.url,
+      summary: article.summary,
+      type: article.type,
     }));
 
     return NextResponse.json(formatted);

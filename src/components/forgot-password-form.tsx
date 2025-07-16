@@ -1,8 +1,8 @@
 "use client"
 
 import { Button } from "@/components/ui/button"
-import { Input } from "@/components/input"
-import { Label } from "@/components/label"
+import { Input } from "@/components/sections/input"
+import { Label } from "@/components/sections/label"
 import { useState } from "react"
 
 export function ForgotPasswordForm() {
